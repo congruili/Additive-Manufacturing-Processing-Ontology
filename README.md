@@ -12,5 +12,5 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-service.ht
 Front end for ElasticSearch search indices:
 https://github.com/CottageLabs/facetview2
 
-A web front end for an Elasticsearch cluster:
+Another web front end for an Elasticsearch cluster:
 https://github.com/mobz/elasticsearch-head
