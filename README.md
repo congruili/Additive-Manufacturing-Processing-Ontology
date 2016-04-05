@@ -14,3 +14,26 @@ https://github.com/CottageLabs/facetview2
 
 Another web front end for an Elasticsearch cluster:
 https://github.com/mobz/elasticsearch-head
+
+Version 1.7.0 DEB package was used. It is available [here](https://www.elastic.co/downloads/past-releases/elasticsearch-1-7-0).
+
+1. Install Elasticsearch 1.7.0: 
+  `$ sudo dpkg -i elasticsearch-1.7.0.deb`
+
+   List files installed to the system from the DEB package: 
+  `$ dpkg -L elasticsearch`
+
+2. Modify the config file located here:
+  ` /etc/elasticsearch/elasticsearch.yml`
+
+3. Install elasticsearch-head:
+   ```
+   $ sudo /usr/share/elasticsearch/bin/plugin -install mobz/elasticsearch-head/1.x
+   ```
+
+4. Run Elasticsearch as a service on the server:
+   ```
+    $ sudo update-rc.d elasticsearch defaults 95 10
+    $ sudo /etc/init.d/elasticsearch start
+   ```
+
