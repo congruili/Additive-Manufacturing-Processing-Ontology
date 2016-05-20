@@ -468,6 +468,17 @@ ampo:Chemical rdf:type owl:Class ;
 
 
 
+
+ampo:Geometric rdf:type owl:Class ;
+              
+              rdfs:subClassOf ampo:Attribute ;
+              
+              rdfs:comment "Attribute which describes the shape." ;
+              
+              rdfs:label "Geometric" .
+
+
+
 ###  https://tw.rpi.edu/web/project/ampo#DynamicQuantitiveAttribute
 
 ampo:DynamicQuantitiveAttribute rdf:type owl:Class ;
