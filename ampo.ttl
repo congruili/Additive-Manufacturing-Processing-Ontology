@@ -468,6 +468,7 @@ ampo:Chemical rdf:type owl:Class ;
 
 
 
+###  https://tw.rpi.edu/web/project/ampo#Geometric
 
 ampo:Geometric rdf:type owl:Class ;
               
