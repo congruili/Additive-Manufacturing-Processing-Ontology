@@ -193,10 +193,24 @@ ampo:hasSubProcess rdf:type owl:ObjectProperty ;
 ampo:isAttributeOf rdf:type owl:ObjectProperty ;
                    
                    rdfs:domain ampo:Attribute ;
+
+                   owl:inverseOf ampo:hasAttribute ;
                    
                    rdfs:comment "An attribute belongs to an entity." ;
                    
                    rdfs:label "is attribute of" .
+
+
+
+###  https://tw.rpi.edu/web/project/ampo#hasAttribute
+
+ampo:hasAttributeOf rdf:type owl:ObjectProperty ;
+                   
+                    rdfs:range ampo:Attribute ;
+                   
+                    rdfs:comment "An entity may have one or more attributes." ;
+                   
+                    rdfs:label "has attribute" .
 
 
 
@@ -207,6 +221,8 @@ ampo:isInputOf rdf:type owl:ObjectProperty ;
                rdfs:domain ampo:Input ;
                
                rdfs:range ampo:Equipment ;
+
+               owl:inverseOf ampo:hasInput ;
                
                rdfs:comment "Input is information which is fed into a piece of equipment." ;
                
@@ -214,17 +230,47 @@ ampo:isInputOf rdf:type owl:ObjectProperty ;
 
 
 
+###  https://tw.rpi.edu/web/project/ampo#hasInput
+
+ampo:hasInput rdf:type owl:ObjectProperty ;
+
+              rdfs:domain ampo:Equipment ;
+               
+              rdfs:range ampo:Input ;            
+                              
+              rdfs:comment "A piece of equipment may have one or more inputs fed into it." ;
+               
+              rdfs:label "has input" .
+
+
+
 ###  https://tw.rpi.edu/web/project/ampo#isMeasuredBy
 
 ampo:isMeasuredBy rdf:type owl:ObjectProperty ;
                   
-                  rdfs:domain ampo:QuantitiveAttribute ;
+                  rdfs:domain ampo:QuantitativeAttribute ;
                   
                   rdfs:range ampo:Sensor ;
+
+                  owl:inverseOf ampo:measures ;  
                   
-                  rdfs:comment "The Sensor used to measure attributes of a given piece of equipment." ;
+                  rdfs:comment "Attributes of a given piece of equipment is measured by the sensor." ;
                   
                   rdfs:label "is measured by" .
+
+
+
+###  https://tw.rpi.edu/web/project/ampo#measures
+
+ampo:measures rdf:type owl:ObjectProperty ;
+
+              rdfs:domain ampo:Sensor ;
+                  
+              rdfs:range ampo:QuantitativeAttribute ;         
+                  
+              rdfs:comment "The sensor measures one or more attributes of a given piece of equipment." ;
+                  
+              rdfs:label "measures" .
 
 
 
@@ -257,10 +303,34 @@ ampo:isParticipantIn rdf:type owl:ObjectProperty ;
                                                 ampo:Step
                                               )
                                 ] ;
+
+                     owl:inverseOf ampo:hasParticipant ;
                      
-                     rdfs:comment "An Object directly involves in a step or process." ;
+                     rdfs:comment "An object directly involves in a step or process." ;
                      
                      rdfs:label "is participant in" .
+
+
+
+###  https://tw.rpi.edu/web/project/ampo#hasParticipant
+
+ampo:hasParticipant rdf:type owl:ObjectProperty ;                   
+
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( ampo:Process
+                                                ampo:Step
+                                              )
+                                ] ;
+
+                    rdfs:range [ rdf:type owl:Class ;
+                                 owl:unionOf ( ampo:Equipment
+                                               ampo:Material
+                                             )
+                               ] ;
+                     
+                    rdfs:comment "A step or a process has an object directly involved in it." ;
+                     
+                    rdfs:label "has participant" .
 
 
 
@@ -338,28 +408,75 @@ ampo:produces rdf:type owl:ObjectProperty ;
 ###  https://tw.rpi.edu/web/project/ampo#downloadURL
 
 ampo:downloadURL rdf:type owl:DatatypeProperty ;
-                 
-                 rdfs:domain ampo:DynamicQuantitiveAttribute ;
+       
+
+                 rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( ampo:DynamicQuantitativeAttribute
+                                                       ampo:QuantitativeInput
+                                                     )
+                             ] ;
                  
                  rdfs:range xsd:anyURI ;
                  
-                 rdfs:comment "This is a direct link to a downloadable file for the time series data." ;
+                 rdfs:comment "This is a direct link to a downloadable file for the data." ;
                  
                  rdfs:label "download URL" .
 
 
 
-###  https://tw.rpi.edu/web/project/ampo#isRecurring
+###  https://tw.rpi.edu/web/project/ampo#descriptiveValue
 
-ampo:isRecurring rdf:type owl:DatatypeProperty ;
+ampo:descriptiveValue rdf:type owl:DatatypeProperty ;
                  
-                 rdfs:domain ampo:Process ;
+                      rdfs:domain ampo:AbstractAttribute ;
                  
-                 rdfs:range xsd:boolean ;
+                      rdfs:range xsd:string ;
                  
-                 rdfs:comment "A process that happens more than once. It is constantly occurring." ;
+                      rdfs:comment "The abstract attribute has the descriptive value." ;
                  
-                 rdfs:label "is recurring" .
+                      rdfs:label "descriptive value" .
+
+
+
+###  https://tw.rpi.edu/web/project/ampo#hasNumberOfSubProcesses
+
+ampo:hasNumberOfSubProcesses rdf:type owl:DatatypeProperty ;
+                 
+                             rdfs:domain ampo:Process ;
+                 
+                             rdfs:range xsd:int ;
+                 
+                             rdfs:comment "A process contains a certain number of sub processes." ;
+                 
+                             rdfs:label "has number of sub processes" .
+
+
+
+###  https://tw.rpi.edu/web/project/ampo#hasNumberOfSteps
+
+ampo:hasNumberOfSteps rdf:type owl:DatatypeProperty ;
+                 
+                      rdfs:domain ampo:Process ;
+                 
+                      rdfs:range xsd:int ;
+                 
+                      rdfs:comment "A process contains a certain number of steps." ;
+                 
+                      rdfs:label "has number of steps" .
+
+
+
+####  https://tw.rpi.edu/web/project/ampo#isRecurring
+#
+#ampo:isRecurring rdf:type owl:DatatypeProperty ;
+#                 
+#                 rdfs:domain ampo:Process ;
+#                 
+#                 rdfs:range xsd:boolean ;
+#                 
+#                 rdfs:comment "A process that happens more than once. It is constantly occurring." ;
+#                 
+#                 rdfs:label "is recurring" .
 
 
 
@@ -480,15 +597,15 @@ ampo:Geometric rdf:type owl:Class ;
 
 
 
-###  https://tw.rpi.edu/web/project/ampo#DynamicQuantitiveAttribute
+###  https://tw.rpi.edu/web/project/ampo#DynamicQuantitativeAttribute
 
-ampo:DynamicQuantitiveAttribute rdf:type owl:Class ;
+ampo:DynamicQuantitativeAttribute rdf:type owl:Class ;
                                 
-                                rdfs:subClassOf ampo:QuantitiveAttribute ;
+                                rdfs:subClassOf ampo:QuantitativeAttribute ;
                                 
                                 rdfs:comment "An attribute that is a function of time." ;
                                 
-                                rdfs:label "Dynamic Quantitive Attribute" .
+                                rdfs:label "Dynamic Quantitative Attribute" .
 
 
 
@@ -615,28 +732,28 @@ ampo:Product rdf:type owl:Class ;
 
 
 
-###  https://tw.rpi.edu/web/project/ampo#QuantitiveAttribute
+###  https://tw.rpi.edu/web/project/ampo#QuantitativeAttribute
 
-ampo:QuantitiveAttribute rdf:type owl:Class ;
+ampo:QuantitativeAttribute rdf:type owl:Class ;
                          
                          rdfs:subClassOf ampo:Attribute ;
                          
                          rdfs:comment "Property which quantifies the quantity of an artifact. Examples include surface roughness." ;
                          
-                         rdfs:label "Quantitive Attribute" .
+                         rdfs:label "Quantitative Attribute" .
 
 
 
-###  https://tw.rpi.edu/web/project/ampo#QuantitiveInput
+###  https://tw.rpi.edu/web/project/ampo#QuantitativeInput
 
-ampo:QuantitiveInput rdf:type owl:Class ;
+ampo:QuantitativeInput rdf:type owl:Class ;
                      
                      rdfs:subClassOf <http://data.nasa.gov/qudt/owl/qudt#Quantity> ,
                                      ampo:Input ;
                      
                      rdfs:comment "Type of Input that is quantitative in nature. Has a specific value or range." ;
                      
-                     rdfs:label "Quantitive Input" .
+                     rdfs:label "Quantitative Input" .
 
 
 
@@ -652,16 +769,16 @@ ampo:Sensor rdf:type owl:Class ;
 
 
 
-###  https://tw.rpi.edu/web/project/ampo#StaticQuantitiveAttribute
+###  https://tw.rpi.edu/web/project/ampo#StaticQuantitativeAttribute
 
-ampo:StaticQuantitiveAttribute rdf:type owl:Class ;
+ampo:StaticQuantitativeAttribute rdf:type owl:Class ;
                                
                                rdfs:subClassOf <http://data.nasa.gov/qudt/owl/qudt#Quantity> ,
-                                               ampo:QuantitiveAttribute ;
+                                               ampo:QuantitativeAttribute ;
                                
                                rdfs:comment "An attribute that remains the same throughout the process." ;
                                
-                               rdfs:label "Static Quantitive Attribute" .
+                               rdfs:label "Static Quantitative Attribute" .
 
 
 
