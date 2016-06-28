@@ -1,0 +1,23 @@
+PREFIX ampo: <https://tw.rpi.edu/web/project/ampo#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX sio: <http://semanticscience.org/ontology/sio.owl#> 
+PREFIX xml: <http://www.w3.org/XML/1998/namespace> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
+PREFIX prov: <http://www.w3.org/ns/prov#> 
+PREFIX qudt: <http://data.qudt.org/qudt/owl/1.0.0/qudt.owl#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX dcterms: <http://purl.org/dc/terms/> 
+PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> 
+
+DESCRIBE ?equipment ?type ?process ?largerEquip ?smallerEquip ?input ?attr
+WHERE {
+  ?equipment a ampo:Equipment .
+  ?equipment vitro:mostSpecificType ?type .
+  OPTIONAL {?equipment ampo:isParticipantIn ?process }
+  OPTIONAL { ?equipment ampo:isPartOf ?largerEquip }
+  OPTIONAL { ?equipment ampo:hasPart ?smallerEquip }
+  OPTIONAL { ?equipment ampo:hasInput ?input }
+  OPTIONAL { ?equipment ampo:hasAttribute ?attr }
+}
