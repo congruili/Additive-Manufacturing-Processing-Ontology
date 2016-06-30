@@ -11,13 +11,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dcterms: <http://purl.org/dc/terms/> 
 PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> 
 
-DESCRIBE ?equipment ?type ?process ?largerEquip ?smallerEquip ?input ?attr
+DESCRIBE ?material ?type ?process ?attr
 WHERE {
-  ?equipment a ampo:Equipment .
-  ?equipment vitro:mostSpecificType ?type .
-  OPTIONAL { ?equipment ampo:isParticipantIn ?process }
-  OPTIONAL { ?equipment ampo:isPartOf ?largerEquip }
-  OPTIONAL { ?equipment ampo:hasPart ?smallerEquip }
-  OPTIONAL { ?equipment ampo:hasInput ?input }
-  OPTIONAL { ?equipment ampo:hasAttribute ?attr }
+  ?material a ampo:Material .
+  ?material vitro:mostSpecificType ?type .
+  OPTIONAL { ?material ampo:isParticipantIn ?process }
+  OPTIONAL { ?material ampo:hasAttribute ?attr }
 }
