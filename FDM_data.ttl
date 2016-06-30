@@ -12,7 +12,8 @@
 @prefix vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> .
 
 
-ampo:liquifier vitro:mostSpecificType ampo:Energizer ;
+ampo:liquifier rdfs:label "liquifier" ;
+               vitro:mostSpecificType ampo:Energizer ;
                rdf:type ampo:Equipment ;
                ampo:hasAttribute ampo:max_liquifier_temperature ,
                                  ampo:max_heating_power ;
@@ -54,7 +55,8 @@ ampo:liquifier vitro:mostSpecificType ampo:Energizer ;
                                     ampo:material_deposition_33_of_33 .
 
 
-ampo:nozzle vitro:mostSpecificType ampo:Actuator ;
+ampo:nozzle rdfs:label "nozzle" ;
+            vitro:mostSpecificType ampo:Actuator ;
             rdf:type ampo:Equipment ;
             ampo:isPartOf ampo:print_head ;
             ampo:hasAttribute ampo:output_diameter ,
@@ -95,7 +97,8 @@ ampo:nozzle vitro:mostSpecificType ampo:Actuator ;
                                  ampo:material_deposition_33_of_33 .
 
 
-ampo:material_driver vitro:mostSpecificType ampo:Actuator ;
+ampo:material_driver rdfs:label "material driver" ;
+                     vitro:mostSpecificType ampo:Actuator ;
                      rdf:type ampo:Equipment ;
                      ampo:isPartOf ampo:print_head ;
                      ampo:hasAttribute ampo:max_material_driver_speed ;
@@ -103,7 +106,8 @@ ampo:material_driver vitro:mostSpecificType ampo:Actuator ;
                      ampo:isParticipantIn ampo:fused_deposition_modeling .
 
 
-ampo:build_polymer vitro:mostSpecificType ampo:BuildMaterial ;
+ampo:build_polymer rdfs:label "build polymer" ;
+                   vitro:mostSpecificType ampo:BuildMaterial ;
                    rdf:type ampo:Material ;
                    ampo:hasAttribute ampo:build_thermal_conductivity ,
                                      ampo:build_melting_point ,
@@ -150,7 +154,8 @@ ampo:build_polymer vitro:mostSpecificType ampo:BuildMaterial ;
                                         ampo:material_deposition_33_of_33 .
 
 
-ampo:support_polymer vitro:mostSpecificType ampo:SupportMaterial ;
+ampo:support_polymer rdfs:label "support polymer" ;
+                     vitro:mostSpecificType ampo:SupportMaterial ;
                      rdf:type ampo:Material ;
                      ampo:hasAttribute ampo:support_thermal_conductivity ,
                                        ampo:support_melting_point ,
@@ -160,10 +165,44 @@ ampo:support_polymer vitro:mostSpecificType ampo:SupportMaterial ;
                                        ampo:support_viscosity ,
                                        ampo:support_density ,
                                        ampo:support_tensile_strength ,
-                                       ampo:support_flexural_strength .
+                                       ampo:support_flexural_strength ;
+                     ampo:isParticipantIn ampo:material_deposition_1_of_33 ,
+                                          ampo:material_deposition_2_of_33 ,
+                                          ampo:material_deposition_3_of_33 ,
+                                          ampo:material_deposition_4_of_33 ,
+                                          ampo:material_deposition_5_of_33 ,
+                                          ampo:material_deposition_6_of_33 ,
+                                          ampo:material_deposition_7_of_33 ,
+                                          ampo:material_deposition_8_of_33 ,
+                                          ampo:material_deposition_9_of_33 ,
+                                          ampo:material_deposition_10_of_33 ,
+                                          ampo:material_deposition_11_of_33 ,
+                                          ampo:material_deposition_12_of_33 ,
+                                          ampo:material_deposition_13_of_33 ,
+                                          ampo:material_deposition_14_of_33 ,
+                                          ampo:material_deposition_15_of_33 ,
+                                          ampo:material_deposition_16_of_33 ,
+                                          ampo:material_deposition_17_of_33 ,
+                                          ampo:material_deposition_18_of_33 ,
+                                          ampo:material_deposition_19_of_33 ,
+                                          ampo:material_deposition_20_of_33 ,
+                                          ampo:material_deposition_21_of_33 ,
+                                          ampo:material_deposition_22_of_33 ,
+                                          ampo:material_deposition_23_of_33 ,
+                                          ampo:material_deposition_24_of_33 ,
+                                          ampo:material_deposition_25_of_33 ,
+                                          ampo:material_deposition_26_of_33 ,
+                                          ampo:material_deposition_27_of_33 ,
+                                          ampo:material_deposition_28_of_33 ,
+                                          ampo:material_deposition_29_of_33 ,
+                                          ampo:material_deposition_30_of_33 ,
+                                          ampo:material_deposition_31_of_33 ,
+                                          ampo:material_deposition_32_of_33 ,
+                                          ampo:material_deposition_33_of_33 .
 
 
-ampo:scanning_motors vitro:mostSpecificType ampo:Actuator ;
+ampo:scanning_motors rdfs:label "scanning motors" ;
+                     vitro:mostSpecificType ampo:Actuator ;
                      rdf:type ampo:Equipment ;
                      ampo:hasAttribute ampo:max_scanning_motor_speed ,
                                        ampo:max_scanning_motor_step_size ;
@@ -172,7 +211,8 @@ ampo:scanning_motors vitro:mostSpecificType ampo:Actuator ;
                      ampo:isParticipantIn ampo:fused_deposition_modeling .
 
 
-ampo:index_stage vitro:mostSpecificType ampo:Actuator ;
+ampo:index_stage rdfs:label "index stage" ;
+                 vitro:mostSpecificType ampo:Actuator ;
                  rdf:type ampo:Equipment ;
                  ampo:hasAttribute ampo:max_index_stage_speed ,
                                    ampo:max_index_stage_step_size ;
@@ -214,7 +254,8 @@ ampo:index_stage vitro:mostSpecificType ampo:Actuator ;
                                       ampo:indexing_33_of_33 .
 
 
-ampo:cube rdf:type ampo:Product ;
+ampo:cube rdfs:label "cube" ;
+          rdf:type ampo:Product ;
           ampo:hasAttribute ampo:state ,
                             ampo:chemical_porosity ,
                             ampo:cube_strength ,
@@ -223,7 +264,8 @@ ampo:cube rdf:type ampo:Product ;
                             ampo:surface_finish .
 
 
-ampo:BukobotV2 vitro:mostSpecificType ampo:Equipment ;
+ampo:BukobotV2 rdfs:label "BukobotV2" ;
+               vitro:mostSpecificType ampo:Equipment ;
                rdf:type ampo:Equipment ;
                ampo:hasAttribute ampo:max_workpiece_dimension_length ,
                                  ampo:max_workpiece_dimension_width ,
@@ -234,7 +276,8 @@ ampo:BukobotV2 vitro:mostSpecificType ampo:Equipment ;
                ampo:isParticipantIn ampo:fused_deposition_modeling .
 
 
-ampo:print_head vitro:mostSpecificType ampo:Equipment ;
+ampo:print_head rdfs:label "print head" ;
+                vitro:mostSpecificType ampo:Equipment ;
                 rdf:type ampo:Equipment ;
                 ampo:hasPart ampo:liquifier ,
                              ampo:nozzle ,
@@ -242,12 +285,14 @@ ampo:print_head vitro:mostSpecificType ampo:Equipment ;
                 ampo:isParticipantIn ampo:fused_deposition_modeling .
 
 
-ampo:CAD_model rdf:type ampo:Model ;
+ampo:CAD_model rdfs:label "CAD model" ;
+               rdf:type ampo:Model ;
                ampo:hasAttribute ampo:slice ;
                ampo:determines ampo:path .
 
 
-ampo:max_liquifier_temperature rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_liquifier_temperature rdfs:label "max liquifier temperature" ;
+                               rdf:type ampo:StaticQuantitativeAttribute ,
                                         ampo:Thermal ,
                                         ampo:Capacity ;
                                qudt:quantityValue [ qudt:numericValue "295"^^xsd:double ;
@@ -256,13 +301,15 @@ ampo:max_liquifier_temperature rdf:type ampo:StaticQuantitativeAttribute ,
                                ampo:isAttributeOf ampo:liquifier . 
 
 
-ampo:max_heating_power rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_heating_power rdfs:label "max heating power" ;
+                       rdf:type ampo:StaticQuantitativeAttribute ,
                                 ampo:Thermal ,
                                 ampo:Capacity ;
                        ampo:isAttributeOf ampo:liquifier .
 
 
-ampo:input_diameter rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:input_diameter rdfs:label "input diameter" ;
+                    rdf:type ampo:StaticQuantitativeAttribute ,
                              ampo:Geometric ,
                              ampo:Capacity ;
                     qudt:quantityValue [ qudt:numericValue "0.3"^^xsd:double ;
@@ -271,7 +318,8 @@ ampo:input_diameter rdf:type ampo:StaticQuantitativeAttribute ,
                     ampo:isAttributeOf ampo:nozzle .     
 
 
-ampo:output_diameter rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:output_diameter rdfs:label "output diameter" ;
+                     rdf:type ampo:StaticQuantitativeAttribute ,
                               ampo:Geometric ,
                               ampo:Capacity ;
                      qudt:quantityValue [ qudt:numericValue "0.35"^^xsd:double ;
@@ -280,7 +328,8 @@ ampo:output_diameter rdf:type ampo:StaticQuantitativeAttribute ,
                      ampo:isAttributeOf ampo:nozzle .    
 
 
-ampo:max_material_driver_speed rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_material_driver_speed rdfs:label "max material driver speed" ;
+                               rdf:type ampo:StaticQuantitativeAttribute ,
                                         ampo:Capacity ;
                                qudt:quantityValue [ qudt:numericValue "12"^^xsd:double ;
                                                     qudt:unit qudt:cubic_millimeter_per_second                                    
@@ -288,12 +337,14 @@ ampo:max_material_driver_speed rdf:type ampo:StaticQuantitativeAttribute ,
                                ampo:isAttributeOf ampo:material_driver .  
 
 
-ampo:build_thermal_conductivity rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:build_thermal_conductivity rdfs:label "build thermal conductivity" ;
+                                rdf:type ampo:StaticQuantitativeAttribute ,
                                          ampo:Thermal ;
                                 ampo:isAttributeOf ampo:build_polymer .  
 
 
-ampo:build_melting_point rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:build_melting_point rdfs:label "build melting point" ;
+                         rdf:type ampo:StaticQuantitativeAttribute ,
                                   ampo:Chemical ;
                          qudt:quantityValue [ qudt:numericValue "165"^^xsd:double ;
                                               qudt:unit qudt:degree_Celsius ;
@@ -302,12 +353,14 @@ ampo:build_melting_point rdf:type ampo:StaticQuantitativeAttribute ,
                          ampo:isAttributeOf ampo:build_polymer . 
 
 
-ampo:build_thermal_expansion_coefficient rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:build_thermal_expansion_coefficient rdfs:label "build thermal expansion coefficient" ;
+                                         rdf:type ampo:StaticQuantitativeAttribute ,
                                                   ampo:Thermal ;                
                                          ampo:isAttributeOf ampo:build_polymer . 
 
 
-ampo:build_glass_transition_temperature rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:build_glass_transition_temperature rdfs:label "build glass transition temperature" ;
+                                        rdf:type ampo:StaticQuantitativeAttribute ,
                                                  ampo:Chemical ;
                                         qudt:quantityValue [ qudt:numericValue "60"^^xsd:double ;
                                                              qudt:unit qudt:degree_Celsius ;
@@ -316,19 +369,22 @@ ampo:build_glass_transition_temperature rdf:type ampo:StaticQuantitativeAttribut
                                         ampo:isAttributeOf ampo:build_polymer . 
 
 
-ampo:build_reactivity rdf:type ampo:AbstractAttribute ,
+ampo:build_reactivity rdfs:label "build reactivity" ;
+                      rdf:type ampo:AbstractAttribute ,
                                ampo:Chemical ,
 				                       ampo:Capacity ;
                       ampo:descriptiveValue "stable"^^xsd:string ;
 					            ampo:isAttributeOf ampo:build_polymer .
 
 
-ampo:build_viscosity rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:build_viscosity rdfs:label "build viscosity" ;
+                     rdf:type ampo:StaticQuantitativeAttribute ,
                               ampo:Chemical ;                 
                      ampo:isAttributeOf ampo:build_polymer . 
 
 
-ampo:build_density rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:build_density rdfs:label "build density" ;
+                   rdf:type ampo:StaticQuantitativeAttribute ,
                             ampo:Capacity ;     
                    qudt:quantityValue [ qudt:numericValue "1.25"^^xsd:double ;
                                         qudt:unit qudt:g_per_cc                             
@@ -336,7 +392,8 @@ ampo:build_density rdf:type ampo:StaticQuantitativeAttribute ,
                    ampo:isAttributeOf ampo:build_polymer . 
 
 
-ampo:build_tensile_strength rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:build_tensile_strength rdfs:label "build tensile strength" ;
+                            rdf:type ampo:StaticQuantitativeAttribute ,
                                      ampo:Mechanical ;
                             qudt:quantityValue [ qudt:numericValue "65.714"^^xsd:double ;
                                                  qudt:unit qudt:MPa                            
@@ -344,7 +401,8 @@ ampo:build_tensile_strength rdf:type ampo:StaticQuantitativeAttribute ,
                             ampo:isAttributeOf ampo:build_polymer . 
 
 
-ampo:build_flexural_strength rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:build_flexural_strength rdfs:label "build flexural strength" ;
+                             rdf:type ampo:StaticQuantitativeAttribute ,
                                       ampo:Mechanical ;     
                              qudt:quantityValue [ qudt:numericValue "94.672"^^xsd:double ;
                                                   qudt:unit qudt:MPa                            
@@ -352,7 +410,8 @@ ampo:build_flexural_strength rdf:type ampo:StaticQuantitativeAttribute ,
                              ampo:isAttributeOf ampo:build_polymer . 
 
 
-ampo:compression_strength rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:compression_strength rdfs:label "compression strength" ;
+                          rdf:type ampo:StaticQuantitativeAttribute ,
                                    ampo:Mechanical ;     
                           qudt:quantityValue [ qudt:numericValue "93.769"^^xsd:double ;
                                                qudt:unit qudt:MPa                            
@@ -360,64 +419,76 @@ ampo:compression_strength rdf:type ampo:StaticQuantitativeAttribute ,
                           ampo:isAttributeOf ampo:build_polymer . 
 
 
-ampo:support_thermal_conductivity rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:support_thermal_conductivity rdfs:label "support thermal conductivity" ;
+                                  rdf:type ampo:StaticQuantitativeAttribute ,
                                            ampo:Thermal ;
                                   ampo:isAttributeOf ampo:support_polymer .  
 
 
-ampo:support_melting_point rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:support_melting_point rdfs:label "support melting point" ;
+                           rdf:type ampo:StaticQuantitativeAttribute ,
                                     ampo:Chemical ;                 
                            ampo:isAttributeOf ampo:support_polymer . 
 
 
-ampo:support_thermal_expansion_coefficient rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:support_thermal_expansion_coefficient rdfs:label "support thermal expansion coefficient" ;
+                                           rdf:type ampo:StaticQuantitativeAttribute ,
                                                     ampo:Thermal ;                
                                            ampo:isAttributeOf ampo:support_polymer . 
 
 
-ampo:support_glass_transition_temperature rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:support_glass_transition_temperature rdfs:label "support glass transition temperature" ;
+                                          rdf:type ampo:StaticQuantitativeAttribute ,
                                                    ampo:Chemical ;                  
                                           ampo:isAttributeOf ampo:support_polymer . 
 
 
-ampo:support_reactivity rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:support_reactivity rdfs:label "support reactivity" ;
+                        rdf:type ampo:StaticQuantitativeAttribute ,
                                  ampo:Chemical ,
 				                         ampo:Capacity ;
                         ampo:descriptiveValue "stable"^^xsd:string ;
 					              ampo:isAttributeOf ampo:support_polymer .
 
 
-ampo:support_viscosity rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:support_viscosity rdfs:label "support viscosity" ;
+                       rdf:type ampo:StaticQuantitativeAttribute ,
                                 ampo:Chemical ;                 
                        ampo:isAttributeOf ampo:support_polymer . 
 
 
-ampo:support_density rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:support_density rdfs:label "support density" ;
+                     rdf:type ampo:StaticQuantitativeAttribute ,
                               ampo:Capacity ;               
                      ampo:isAttributeOf ampo:support_polymer . 
 
 
-ampo:support_tensile_strength rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:support_tensile_strength rdfs:label "support tensile strength" ;
+                              rdf:type ampo:StaticQuantitativeAttribute ,
                                        ampo:Mechanical ;                 
                               ampo:isAttributeOf ampo:support_polymer . 
 
 
-ampo:support_flexural_strength rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:support_flexural_strength rdfs:label "support flexural strength" ;
+                               rdf:type ampo:StaticQuantitativeAttribute ,
                                         ampo:Mechanical ;               
                                ampo:isAttributeOf ampo:support_polymer . 						
 
 
-ampo:max_scanning_motor_speed rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_scanning_motor_speed rdfs:label "max scanning motor speed" ;
+                              rdf:type ampo:StaticQuantitativeAttribute ,
                                        ampo:Capacity ;
 							                ampo:isAttributeOf ampo:scanning_motors .
 							  
 							
-ampo:max_scanning_motor_step_size rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_scanning_motor_step_size rdfs:label "max scanning motor step size" ;
+                                  rdf:type ampo:StaticQuantitativeAttribute ,
                                            ampo:Capacity ;
 								                  ampo:isAttributeOf ampo:scanning_motors .
 
 
-ampo:max_index_stage_speed rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_index_stage_speed rdfs:label "max index stage speed" ;
+                           rdf:type ampo:StaticQuantitativeAttribute ,
                                     ampo:Capacity ; 
 						               qudt:quantityValue [ qudt:numericValue "300"^^xsd:double ;
                                                 qudt:unit qudt:mm_per_s                           
@@ -425,7 +496,8 @@ ampo:max_index_stage_speed rdf:type ampo:StaticQuantitativeAttribute ,
 						               ampo:isAttributeOf ampo:index_stage .
 					
 				
-ampo:max_index_stage_step_size rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_index_stage_step_size rdfs:label "max index stage step size" ;
+                               rdf:type ampo:StaticQuantitativeAttribute ,
 						                            ampo:Capacity ;
 						                   qudt:quantityValue [ qudt:numericValue "0.003125"^^xsd:double ;
                                                     qudt:unit qudt:step                           
@@ -433,38 +505,45 @@ ampo:max_index_stage_step_size rdf:type ampo:StaticQuantitativeAttribute ,
 						                   ampo:isAttributeOf ampo:index_stage .   
 
 
-ampo:state rdf:type ampo:AbstractAttribute ,
+ampo:state rdfs:label "state" ;
+           rdf:type ampo:AbstractAttribute ,
                     ampo:Chemical ;
 		       ampo:descriptiveValue "solid"^^xsd:string ;
 		       ampo:isAttributeOf ampo:cube .
 		   
 
-ampo:chemical_porosity rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:chemical_porosity rdfs:label "chemical porosity" ;
+                       rdf:type ampo:StaticQuantitativeAttribute ,
                                 ampo:Chemical ;
 			                 ampo:isAttributeOf ampo:cube .
 			  
 			  
-ampo:cube_strength rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:cube_strength rdfs:label "cube strength" ;
+                   rdf:type ampo:StaticQuantitativeAttribute ,
                             ampo:Mechanical ;
 			             ampo:isAttributeOf ampo:cube .	
 			  
 			  
-ampo:mechanical_porosity rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:mechanical_porosity rdfs:label "mechanical porosity" ;
+                         rdf:type ampo:StaticQuantitativeAttribute ,
                                   ampo:Mechanical ;
 			                   ampo:isAttributeOf ampo:cube .	
 			  
 			  
-ampo:dimensional_accuracy rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:dimensional_accuracy rdfs:label "dimensional accuracy" ;
+                          rdf:type ampo:StaticQuantitativeAttribute ,
                                    ampo:Geometric ;
 			                    ampo:isAttributeOf ampo:cube .
 			  
 			  
-ampo:surface_finish rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:surface_finish rdfs:label "surface finish" ;
+                    rdf:type ampo:StaticQuantitativeAttribute ,
                              ampo:Geometric ;
 			              ampo:isAttributeOf ampo:cube .				
 
 
-ampo:max_workpiece_dimension_length rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_workpiece_dimension_length rdfs:label "max workpiece dimension length" ;
+                                    rdf:type ampo:StaticQuantitativeAttribute ,
                                              ampo:Geometric ;
 							                      qudt:quantityValue [ qudt:numericValue "200"^^xsd:double ;
                                                          qudt:unit qudt:mm                           
@@ -472,7 +551,8 @@ ampo:max_workpiece_dimension_length rdf:type ampo:StaticQuantitativeAttribute ,
 							                      ampo:isAttributeOf ampo:BukobotV2 .
 
 
-ampo:max_workpiece_dimension_width rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_workpiece_dimension_width rdfs:label "max workpiece dimension width" ;
+                                   rdf:type ampo:StaticQuantitativeAttribute ,
                                             ampo:Geometric ;
                                    qudt:quantityValue [ qudt:numericValue "200"^^xsd:double ;
                                                         qudt:unit qudt:mm                           
@@ -480,7 +560,8 @@ ampo:max_workpiece_dimension_width rdf:type ampo:StaticQuantitativeAttribute ,
                                    ampo:isAttributeOf ampo:BukobotV2 .
 
 
-ampo:max_workpiece_dimension_height rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_workpiece_dimension_height rdfs:label "max workpiece dimension height" ;
+                                    rdf:type ampo:StaticQuantitativeAttribute ,
                                              ampo:Geometric ;
                                     qudt:quantityValue [ qudt:numericValue "200"^^xsd:double ;
                                                          qudt:unit qudt:mm                           
@@ -488,7 +569,8 @@ ampo:max_workpiece_dimension_height rdf:type ampo:StaticQuantitativeAttribute ,
                                     ampo:isAttributeOf ampo:BukobotV2 .
 							  
 							  
-ampo:max_platform_temperature rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:max_platform_temperature rdfs:label "max platform temperature" ;
+                              rdf:type ampo:StaticQuantitativeAttribute ,
                                        ampo:Thermal ,
                                        ampo:Capacity ;
 							                qudt:quantityValue [ qudt:numericValue "120"^^xsd:double ;
@@ -497,21 +579,24 @@ ampo:max_platform_temperature rdf:type ampo:StaticQuantitativeAttribute ,
 							                ampo:isAttributeOf ampo:BukobotV2 .
 							  
 							  
-ampo:platform_temperature rdf:type ampo:QuantitativeInput ;
+ampo:platform_temperature rdfs:label "platform temperature" ;
+                          rdf:type ampo:QuantitativeInput ;
                           qudt:quantityValue [ qudt:numericValue "60"^^xsd:double ;
                                                qudt:unit qudt:degree_Celsius 
                                              ] ;
 						              ampo:isInputOf ampo:BukobotV2 .
 						  
 						
-ampo:extruder_temperature rdf:type ampo:QuantitativeInput ;
+ampo:extruder_temperature rdfs:label "extruder temperature" ;
+                          rdf:type ampo:QuantitativeInput ;
                           qudt:quantityValue [ qudt:numericValue "200"^^xsd:double ;
                                                qudt:unit qudt:degree_Celsius 
                                              ] ;
 						              ampo:isInputOf ampo:BukobotV2 .
 
 
-ampo:slice rdf:type ampo:StaticQuantitativeAttribute ,
+ampo:slice rdfs:label "slice" ;
+           rdf:type ampo:StaticQuantitativeAttribute ,
                     ampo:Geometric ;
 		       qudt:quantityValue [ qudt:numericValue "33"^^xsd:double ;
                                 qudt:unit qudt:layer
@@ -519,35 +604,43 @@ ampo:slice rdf:type ampo:StaticQuantitativeAttribute ,
 		       ampo:isAttributeOf ampo:CAD_model .
 
 
-ampo:heating_power rdf:type ampo:QuantitativeInput ;
+ampo:heating_power rdfs:label "heating power" ;
+                   rdf:type ampo:QuantitativeInput ;
                    ampo:isInputOf ampo:liquifier .
 
 
-ampo:material_driver_speed rdf:type ampo:QuantitativeInput ;
+ampo:material_driver_speed rdfs:label "material driver speed" ;
+                           rdf:type ampo:QuantitativeInput ;
                            ampo:isInputOf ampo:material_driver .
 
 
-ampo:stage_speed rdf:type ampo:QuantitativeInput ;
+ampo:stage_speed rdfs:label "stage speed" ;
+                 rdf:type ampo:QuantitativeInput ;
                  ampo:isInputOf ampo:index_stage .
 
 
-ampo:displacement rdf:type ampo:QuantitativeInput ;
+ampo:displacement rdfs:label "displacement" ;
+                  rdf:type ampo:QuantitativeInput ;
                   ampo:isInputOf ampo:index_stage .
 
 
-ampo:path rdf:type ampo:QuantitativeInput ;
+ampo:path rdfs:label "path" ;
+          rdf:type ampo:QuantitativeInput ;
           ampo:isInputOf ampo:scanning_motors .
 
 
-ampo:charles_parslow rdf:type prov:Person .
+ampo:charles_parslow rdfs:label "charles parslow" ;
+                     rdf:type prov:Person .
 
 
-ampo:fused_deposition_modeling prov:qualifiedAssociation [ prov:agent ampo:charles_parslow ;
+ampo:fused_deposition_modeling rdfs:label "fused deposition modeling" ;
+                               prov:qualifiedAssociation [ prov:agent ampo:charles_parslow ;
                                                            prov:hadRole prov:operator
                                                          ] .
 
 
-ampo:fused_deposition_modeling ampo:hasSubProcess ampo:printing_layer_1_of_33 ,
+ampo:fused_deposition_modeling rdfs:label "fused deposition modeling" ;
+                               ampo:hasSubProcess ampo:printing_layer_1_of_33 ,
                                                   ampo:printing_layer_2_of_33 ,
                                                   ampo:printing_layer_3_of_33 ,
                                                   ampo:printing_layer_4_of_33 ,
@@ -584,7 +677,8 @@ ampo:fused_deposition_modeling ampo:hasSubProcess ampo:printing_layer_1_of_33 ,
                                ampo:produces ampo:cube .
 
 
-ampo:printing_layer_1_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_1_of_33 rdfs:label "printing layer 1 of 33" ;
+                            rdf:type ampo:Process ;
                             prov:startedAtTime "2016-05-10T13:32:53.4"^^xsd:dateTime ;
                             prov:endedAtTime "2016-05-10T13:33:03.4"^^xsd:dateTime ;
                             ampo:happensDirectlyBefore ampo:printing_layer_2_of_33 ;
@@ -592,13 +686,16 @@ ampo:printing_layer_1_of_33 rdf:type ampo:Process ;
                             ampo:hasStep ampo:indexing_1_of_33 ,
                                          ampo:material_deposition_1_of_33 .
 
-ampo:indexing_1_of_33 rdf:type ampo:Step ;
+ampo:indexing_1_of_33 rdfs:label "indexing 1 of 33" ;
+                      rdf:type ampo:Step ;
                       ampo:happensDirectlyBefore ampo:material_deposition_1_of_33 .
 
-ampo:material_deposition_1_of_33 rdf:type ampo:Step .
+ampo:material_deposition_1_of_33 rdfs:label "material deposition 1 of 33" ;
+                                 rdf:type ampo:Step .
 
 
-ampo:printing_layer_2_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_2_of_33 rdfs:label "printing layer 2 of 33" ;
+                            rdf:type ampo:Process ;
                             prov:startedAtTime "2016-05-10T13:33:03.4"^^xsd:dateTime ;
                             prov:endedAtTime "2016-05-10T13:33:13.2"^^xsd:dateTime ;
                             ampo:happensDirectlyBefore ampo:printing_layer_3_of_33 ;
@@ -606,13 +703,16 @@ ampo:printing_layer_2_of_33 rdf:type ampo:Process ;
                             ampo:hasStep ampo:indexing_2_of_33 ,
                                          ampo:material_deposition_2_of_33 .
 
-ampo:indexing_2_of_33 rdf:type ampo:Step ;
+ampo:indexing_2_of_33 rdfs:label "indexing 2 of 33" ;
+                      rdf:type ampo:Step ;
                       ampo:happensDirectlyBefore ampo:material_deposition_2_of_33 .
 
-ampo:material_deposition_2_of_33 rdf:type ampo:Step .
+ampo:material_deposition_2_of_33 rdfs:label "material deposition 2 of 33" ;
+                                 rdf:type ampo:Step .
 
 
-ampo:printing_layer_3_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_3_of_33 rdfs:label "printing layer 3 of 33" ;
+                            rdf:type ampo:Process ;
                             prov:startedAtTime "2016-05-10T13:33:13.2"^^xsd:dateTime ;
                             prov:endedAtTime "2016-05-10T13:33:24.0"^^xsd:dateTime ;
                             ampo:happensDirectlyBefore ampo:printing_layer_4_of_33 ;
@@ -620,13 +720,16 @@ ampo:printing_layer_3_of_33 rdf:type ampo:Process ;
                             ampo:hasStep ampo:indexing_3_of_33 ,
                                          ampo:material_deposition_3_of_33 .
 
-ampo:indexing_3_of_33 rdf:type ampo:Step ;
+ampo:indexing_3_of_33 rdfs:label "indexing 3 of 33" ;
+                      rdf:type ampo:Step ;
                       ampo:happensDirectlyBefore ampo:material_deposition_3_of_33 .
 
-ampo:material_deposition_3_of_33 rdf:type ampo:Step .
+ampo:material_deposition_3_of_33 rdfs:label "material deposition 3 of 33" ;
+                                 rdf:type ampo:Step .
 
 
-ampo:printing_layer_4_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_4_of_33 rdfs:label "printing layer 4 of 33" ;
+                            rdf:type ampo:Process ;
                             prov:startedAtTime "2016-05-10T13:33:24.0"^^xsd:dateTime ;
                             prov:endedAtTime "2016-05-10T13:33:34.5"^^xsd:dateTime ;
                             ampo:happensDirectlyBefore ampo:printing_layer_5_of_33 ;
@@ -634,13 +737,16 @@ ampo:printing_layer_4_of_33 rdf:type ampo:Process ;
                             ampo:hasStep ampo:indexing_4_of_33 ,
                                          ampo:material_deposition_4_of_33 .
 
-ampo:indexing_4_of_33 rdf:type ampo:Step ;
+ampo:indexing_4_of_33 rdfs:label "indexing 4 of 33" ;
+                      rdf:type ampo:Step ;
                       ampo:happensDirectlyBefore ampo:material_deposition_4_of_33 .
 
-ampo:material_deposition_4_of_33 rdf:type ampo:Step .
+ampo:material_deposition_4_of_33 rdfs:label "material deposition 4 of 33" ;
+                                 rdf:type ampo:Step .
 
 
-ampo:printing_layer_5_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_5_of_33 rdfs:label "printing layer 5 of 33" ;
+                            rdf:type ampo:Process ;
                             prov:startedAtTime "2016-05-10T13:33:34.5"^^xsd:dateTime ;
                             prov:endedAtTime "2016-05-10T13:33:45.3"^^xsd:dateTime ;
                             ampo:happensDirectlyBefore ampo:printing_layer_6_of_33 ;
@@ -648,13 +754,16 @@ ampo:printing_layer_5_of_33 rdf:type ampo:Process ;
                             ampo:hasStep ampo:indexing_5_of_33 ,
                                          ampo:material_deposition_5_of_33 .
 
-ampo:indexing_5_of_33 rdf:type ampo:Step ;
+ampo:indexing_5_of_33 rdfs:label "indexing 5 of 33" ;
+                      rdf:type ampo:Step ;
                       ampo:happensDirectlyBefore ampo:material_deposition_5_of_33 .
 
-ampo:material_deposition_5_of_33 rdf:type ampo:Step .
+ampo:material_deposition_5_of_33 rdfs:label "material deposition 5 of 33" ;
+                                 rdf:type ampo:Step .
 
 
-ampo:printing_layer_6_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_6_of_33 rdfs:label "printing layer 6 of 33" ;
+                            rdf:type ampo:Process ;
                             prov:startedAtTime "2016-05-10T13:33:45.3"^^xsd:dateTime ;
                             prov:endedAtTime "2016-05-10T13:33:55.8"^^xsd:dateTime ;
                             ampo:happensDirectlyBefore ampo:printing_layer_7_of_33 ;
@@ -662,13 +771,16 @@ ampo:printing_layer_6_of_33 rdf:type ampo:Process ;
                             ampo:hasStep ampo:indexing_6_of_33 ,
                                          ampo:material_deposition_6_of_33 .
 
-ampo:indexing_6_of_33 rdf:type ampo:Step ;
+ampo:indexing_6_of_33 rdfs:label "indexing 6 of 33" ;
+                      rdf:type ampo:Step ;
                       ampo:happensDirectlyBefore ampo:material_deposition_6_of_33 .
 
-ampo:material_deposition_6_of_33 rdf:type ampo:Step .
+ampo:material_deposition_6_of_33 rdfs:label "material deposition 6 of 33" ;
+                                 rdf:type ampo:Step .
 
 
-ampo:printing_layer_7_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_7_of_33 rdfs:label "printing layer 7 of 33" ;
+                            rdf:type ampo:Process ;
                             prov:startedAtTime "2016-05-10T13:33:55.8"^^xsd:dateTime ;
                             prov:endedAtTime "2016-05-10T13:34:06.6"^^xsd:dateTime ;
                             ampo:happensDirectlyBefore ampo:printing_layer_8_of_33 ;
@@ -676,13 +788,16 @@ ampo:printing_layer_7_of_33 rdf:type ampo:Process ;
                             ampo:hasStep ampo:indexing_7_of_33 ,
                                          ampo:material_deposition_7_of_33 .
 
-ampo:indexing_7_of_33 rdf:type ampo:Step ;
+ampo:indexing_7_of_33 rdfs:label "indexing 7 of 33" ;
+                      rdf:type ampo:Step ;
                       ampo:happensDirectlyBefore ampo:material_deposition_7_of_33 .
 
-ampo:material_deposition_7_of_33 rdf:type ampo:Step .
+ampo:material_deposition_7_of_33 rdfs:label "material deposition 7 of 33" ;
+                                 rdf:type ampo:Step .
 
 
-ampo:printing_layer_8_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_8_of_33 rdfs:label "printing layer 8 of 33" ;
+                            rdf:type ampo:Process ;
                             prov:startedAtTime "2016-05-10T13:34:06.6"^^xsd:dateTime ;
                             prov:endedAtTime "2016-05-10T13:34:17.2"^^xsd:dateTime ;
                             ampo:happensDirectlyBefore ampo:printing_layer_9_of_33 ;
@@ -690,13 +805,16 @@ ampo:printing_layer_8_of_33 rdf:type ampo:Process ;
                             ampo:hasStep ampo:indexing_8_of_33 ,
                                          ampo:material_deposition_8_of_33 .
 
-ampo:indexing_8_of_33 rdf:type ampo:Step ;
+ampo:indexing_8_of_33 rdfs:label "indexing 8 of 33" ;
+                      rdf:type ampo:Step ;
                       ampo:happensDirectlyBefore ampo:material_deposition_8_of_33 .
 
-ampo:material_deposition_8_of_33 rdf:type ampo:Step .
+ampo:material_deposition_8_of_33 rdfs:label "material deposition 8 of 33" ;
+                                 rdf:type ampo:Step .
 
 
-ampo:printing_layer_9_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_9_of_33 rdfs:label "printing layer 9 of 33" ;
+                            rdf:type ampo:Process ;
                             prov:startedAtTime "2016-05-10T13:34:17.2"^^xsd:dateTime ;
                             prov:endedAtTime "2016-05-10T13:34:27.9"^^xsd:dateTime ;
                             ampo:happensDirectlyBefore ampo:printing_layer_10_of_33 ;
@@ -704,13 +822,16 @@ ampo:printing_layer_9_of_33 rdf:type ampo:Process ;
                             ampo:hasStep ampo:indexing_9_of_33 ,
                                          ampo:material_deposition_9_of_33 .
 
-ampo:indexing_9_of_33 rdf:type ampo:Step ;
+ampo:indexing_9_of_33 rdfs:label "indexing 9 of 33" ;
+                      rdf:type ampo:Step ;
                       ampo:happensDirectlyBefore ampo:material_deposition_9_of_33 .
 
-ampo:material_deposition_9_of_33 rdf:type ampo:Step .
+ampo:material_deposition_9_of_33 rdfs:label "material deposition 9 of 33" ;
+                                 rdf:type ampo:Step .
 
 
-ampo:printing_layer_10_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_10_of_33 rdfs:label "printing layer 10 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:34:27.9"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:34:38.5"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_11_of_33 ;
@@ -718,13 +839,16 @@ ampo:printing_layer_10_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_10_of_33 ,
                                           ampo:material_deposition_10_of_33 .
 
-ampo:indexing_10_of_33 rdf:type ampo:Step ;
+ampo:indexing_10_of_33 rdfs:label "indexing 10 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_10_of_33 .
 
-ampo:material_deposition_10_of_33 rdf:type ampo:Step .
+ampo:material_deposition_10_of_33 rdfs:label "material deposition 10 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_11_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_11_of_33 rdfs:label "printing layer 11 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:34:38.5"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:34:49.2"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_12_of_33 ;
@@ -732,13 +856,16 @@ ampo:printing_layer_11_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_11_of_33 ,
                                           ampo:material_deposition_11_of_33 .
 
-ampo:indexing_11_of_33 rdf:type ampo:Step ;
+ampo:indexing_11_of_33 rdfs:label "indexing 11 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_11_of_33 .
 
-ampo:material_deposition_11_of_33 rdf:type ampo:Step .
+ampo:material_deposition_11_of_33 rdfs:label "material deposition 11 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_12_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_12_of_33 rdfs:label "printing layer 12 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:34:49.2"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:34:59.8"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_13_of_33 ;
@@ -746,13 +873,16 @@ ampo:printing_layer_12_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_12_of_33 ,
                                           ampo:material_deposition_12_of_33 .
 
-ampo:indexing_12_of_33 rdf:type ampo:Step ;
+ampo:indexing_12_of_33 rdfs:label "indexing 12 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_12_of_33 .
 
-ampo:material_deposition_12_of_33 rdf:type ampo:Step .
+ampo:material_deposition_12_of_33 rdfs:label "material deposition 12 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_13_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_13_of_33 rdfs:label "printing layer 13 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:34:59.8"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:35:10.5"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_14_of_33 ;
@@ -760,13 +890,16 @@ ampo:printing_layer_13_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_13_of_33 ,
                                           ampo:material_deposition_13_of_33 .
 
-ampo:indexing_13_of_33 rdf:type ampo:Step ;
+ampo:indexing_13_of_33 rdfs:label "indexing 13 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_13_of_33 .
 
-ampo:material_deposition_13_of_33 rdf:type ampo:Step .
+ampo:material_deposition_13_of_33 rdfs:label "material deposition 13 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_14_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_14_of_33 rdfs:label "printing layer 14 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:35:10.5"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:35:21.2"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_15_of_33 ;
@@ -774,13 +907,16 @@ ampo:printing_layer_14_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_14_of_33 ,
                                           ampo:material_deposition_14_of_33 .
 
-ampo:indexing_14_of_33 rdf:type ampo:Step ;
+ampo:indexing_14_of_33 rdfs:label "indexing 14 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_14_of_33 .
 
-ampo:material_deposition_14_of_33 rdf:type ampo:Step .
+ampo:material_deposition_14_of_33 rdfs:label "material deposition 14 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_15_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_15_of_33 rdfs:label "printing layer 15 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:35:21.2"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:35:31.9"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_16_of_33 ;
@@ -788,13 +924,16 @@ ampo:printing_layer_15_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_15_of_33 ,
                                           ampo:material_deposition_15_of_33 .
 
-ampo:indexing_15_of_33 rdf:type ampo:Step ;
+ampo:indexing_15_of_33 rdfs:label "indexing 15 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_15_of_33 .
 
-ampo:material_deposition_15_of_33 rdf:type ampo:Step .
+ampo:material_deposition_15_of_33 rdfs:label "material deposition 15 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_16_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_16_of_33 rdfs:label "printing layer 16 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:35:31.9"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:35:42.5"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_17_of_33 ;
@@ -802,13 +941,16 @@ ampo:printing_layer_16_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_16_of_33 ,
                                           ampo:material_deposition_16_of_33 .
 
-ampo:indexing_16_of_33 rdf:type ampo:Step ;
+ampo:indexing_16_of_33 rdfs:label "indexing 16 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_16_of_33 .
 
-ampo:material_deposition_16_of_33 rdf:type ampo:Step .
+ampo:material_deposition_16_of_33 rdfs:label "material deposition 16 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_17_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_17_of_33 rdfs:label "printing layer 17 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:35:42.5"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:35:53.2"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_18_of_33 ;
@@ -816,13 +958,16 @@ ampo:printing_layer_17_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_17_of_33 ,
                                           ampo:material_deposition_17_of_33 .
 
-ampo:indexing_17_of_33 rdf:type ampo:Step ;
+ampo:indexing_17_of_33 rdfs:label "indexing 17 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_17_of_33 .
 
-ampo:material_deposition_17_of_33 rdf:type ampo:Step .
+ampo:material_deposition_17_of_33 rdfs:label "material deposition 17 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_18_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_18_of_33 rdfs:label "printing layer 18 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:35:53.2"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:36:03.8"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_19_of_33 ;
@@ -830,13 +975,16 @@ ampo:printing_layer_18_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_18_of_33 ,
                                           ampo:material_deposition_18_of_33 .
 
-ampo:indexing_18_of_33 rdf:type ampo:Step ;
+ampo:indexing_18_of_33 rdfs:label "indexing 18 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_18_of_33 .
 
-ampo:material_deposition_18_of_33 rdf:type ampo:Step .
+ampo:material_deposition_18_of_33 rdfs:label "material deposition 18 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_19_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_19_of_33 rdfs:label "printing layer 19 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:36:03.8"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:36:14.5"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_20_of_33 ;
@@ -844,13 +992,16 @@ ampo:printing_layer_19_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_19_of_33 ,
                                           ampo:material_deposition_19_of_33 .
 
-ampo:indexing_19_of_33 rdf:type ampo:Step ;
+ampo:indexing_19_of_33 rdfs:label "indexing 19 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_19_of_33 .
 
-ampo:material_deposition_19_of_33 rdf:type ampo:Step .
+ampo:material_deposition_19_of_33 rdfs:label "material deposition 19 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_20_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_20_of_33 rdfs:label "printing layer 20 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:36:14.5"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:36:25.1"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_21_of_33 ;
@@ -858,13 +1009,16 @@ ampo:printing_layer_20_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_20_of_33 ,
                                           ampo:material_deposition_20_of_33 .
 
-ampo:indexing_20_of_33 rdf:type ampo:Step ;
+ampo:indexing_20_of_33 rdfs:label "indexing 20 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_20_of_33 .
 
-ampo:material_deposition_20_of_33 rdf:type ampo:Step .
+ampo:material_deposition_20_of_33 rdfs:label "material deposition 20 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_21_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_21_of_33 rdfs:label "printing layer 21 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:36:25.1"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:36:35.8"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_22_of_33 ;
@@ -872,13 +1026,16 @@ ampo:printing_layer_21_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_21_of_33 ,
                                           ampo:material_deposition_21_of_33 .
 
-ampo:indexing_21_of_33 rdf:type ampo:Step ;
+ampo:indexing_21_of_33 rdfs:label "indexing 21 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_21_of_33 .
 
-ampo:material_deposition_21_of_33 rdf:type ampo:Step .
+ampo:material_deposition_21_of_33 rdfs:label "material deposition 21 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_22_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_22_of_33 rdfs:label "printing layer 22 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:36:35.8"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:36:46.4"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_23_of_33 ;
@@ -886,13 +1043,16 @@ ampo:printing_layer_22_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_22_of_33 ,
                                           ampo:material_deposition_22_of_33 .
 
-ampo:indexing_22_of_33 rdf:type ampo:Step ;
+ampo:indexing_22_of_33 rdfs:label "indexing 22 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_22_of_33 .
 
-ampo:material_deposition_22_of_33 rdf:type ampo:Step .
+ampo:material_deposition_22_of_33 rdfs:label "material deposition 22 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_23_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_23_of_33 rdfs:label "printing layer 23 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:36:46.4"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:36:57.1"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_24_of_33 ;
@@ -900,13 +1060,16 @@ ampo:printing_layer_23_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_23_of_33 ,
                                           ampo:material_deposition_23_of_33 .
 
-ampo:indexing_23_of_33 rdf:type ampo:Step ;
+ampo:indexing_23_of_33 rdfs:label "indexing 23 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_23_of_33 .
 
-ampo:material_deposition_23_of_33 rdf:type ampo:Step .
+ampo:material_deposition_23_of_33 rdfs:label "material deposition 23 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_24_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_24_of_33 rdfs:label "printing layer 24 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:36:57.1"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:37:07.8"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_25_of_33 ;
@@ -914,13 +1077,16 @@ ampo:printing_layer_24_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_24_of_33 ,
                                           ampo:material_deposition_24_of_33 .
 
-ampo:indexing_24_of_33 rdf:type ampo:Step ;
+ampo:indexing_24_of_33 rdfs:label "indexing 24 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_24_of_33 .
 
-ampo:material_deposition_24_of_33 rdf:type ampo:Step .
+ampo:material_deposition_24_of_33 rdfs:label "material deposition 24 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_25_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_25_of_33 rdfs:label "printing layer 25 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:37:07.8"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:37:18.5"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_26_of_33 ;
@@ -928,13 +1094,16 @@ ampo:printing_layer_25_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_25_of_33 ,
                                           ampo:material_deposition_25_of_33 .
 
-ampo:indexing_25_of_33 rdf:type ampo:Step ;
+ampo:indexing_25_of_33 rdfs:label "indexing 25 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_25_of_33 .
 
-ampo:material_deposition_25_of_33 rdf:type ampo:Step .
+ampo:material_deposition_25_of_33 rdfs:label "material deposition 25 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_26_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_26_of_33 rdfs:label "printing layer 26 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:37:18.5"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:37:29.1"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_27_of_33 ;
@@ -942,13 +1111,16 @@ ampo:printing_layer_26_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_26_of_33 ,
                                           ampo:material_deposition_26_of_33 .
 
-ampo:indexing_26_of_33 rdf:type ampo:Step ;
+ampo:indexing_26_of_33 rdfs:label "indexing 26 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_26_of_33 .
 
-ampo:material_deposition_26_of_33 rdf:type ampo:Step .
+ampo:material_deposition_26_of_33 rdfs:label "material deposition 26 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_27_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_27_of_33 rdfs:label "printing layer 27 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:37:29.1"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:37:39.8"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_28_of_33 ;
@@ -956,13 +1128,16 @@ ampo:printing_layer_27_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_27_of_33 ,
                                           ampo:material_deposition_27_of_33 .
 
-ampo:indexing_27_of_33 rdf:type ampo:Step ;
+ampo:indexing_27_of_33 rdfs:label "indexing 27 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_27_of_33 .
 
-ampo:material_deposition_27_of_33 rdf:type ampo:Step .
+ampo:material_deposition_27_of_33 rdfs:label "material deposition 27 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_28_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_28_of_33 rdfs:label "printing layer 28 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:37:39.8"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:37:50.4"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_29_of_33 ;
@@ -970,13 +1145,16 @@ ampo:printing_layer_28_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_28_of_33 ,
                                           ampo:material_deposition_28_of_33 .
 
-ampo:indexing_28_of_33 rdf:type ampo:Step ;
+ampo:indexing_28_of_33 rdfs:label "indexing 28 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_28_of_33 .
 
-ampo:material_deposition_28_of_33 rdf:type ampo:Step .
+ampo:material_deposition_28_of_33 rdfs:label "material deposition 28 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_29_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_29_of_33 rdfs:label "printing layer 29 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:37:50.4"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:38:01.1"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_30_of_33 ;
@@ -984,13 +1162,16 @@ ampo:printing_layer_29_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_29_of_33 ,
                                           ampo:material_deposition_29_of_33 .
 
-ampo:indexing_29_of_33 rdf:type ampo:Step ;
+ampo:indexing_29_of_33 rdfs:label "indexing 29 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_29_of_33 .
 
-ampo:material_deposition_29_of_33 rdf:type ampo:Step .
+ampo:material_deposition_29_of_33 rdfs:label "material deposition 29 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_30_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_30_of_33 rdfs:label "printing layer 30 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:38:01.1"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:38:11.7"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_31_of_33 ;
@@ -998,13 +1179,16 @@ ampo:printing_layer_30_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_30_of_33 ,
                                           ampo:material_deposition_30_of_33 .
 
-ampo:indexing_30_of_33 rdf:type ampo:Step ;
+ampo:indexing_30_of_33 rdfs:label "indexing 30 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_30_of_33 .
 
-ampo:material_deposition_30_of_33 rdf:type ampo:Step .
+ampo:material_deposition_30_of_33 rdfs:label "material deposition 30 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_31_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_31_of_33 rdfs:label "printing layer 31 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:38:11.7"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:38:22.4"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_32_of_33 ;
@@ -1012,13 +1196,16 @@ ampo:printing_layer_31_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_31_of_33 ,
                                           ampo:material_deposition_31_of_33 .
 
-ampo:indexing_31_of_33 rdf:type ampo:Step ;
+ampo:indexing_31_of_33 rdfs:label "indexing 31 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_31_of_33 .
 
-ampo:material_deposition_31_of_33 rdf:type ampo:Step .
+ampo:material_deposition_31_of_33 rdfs:label "material deposition 31 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_32_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_32_of_33 rdfs:label "printing layer 32 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:38:22.4"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:38:33.5"^^xsd:dateTime ;
                              ampo:happensDirectlyBefore ampo:printing_layer_33_of_33 ;
@@ -1026,26 +1213,26 @@ ampo:printing_layer_32_of_33 rdf:type ampo:Process ;
                              ampo:hasStep ampo:indexing_32_of_33 ,
                                           ampo:material_deposition_32_of_33 .
 
-ampo:indexing_32_of_33 rdf:type ampo:Step ;
+ampo:indexing_32_of_33 rdfs:label "indexing 32 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_32_of_33 .
 
-ampo:material_deposition_32_of_33 rdf:type ampo:Step .
+ampo:material_deposition_32_of_33 rdfs:label "material deposition 32 of 33" ;
+                                  rdf:type ampo:Step .
 
 
-ampo:printing_layer_33_of_33 rdf:type ampo:Process ;
+ampo:printing_layer_33_of_33 rdfs:label "printing layer 33 of 33" ;
+                             rdf:type ampo:Process ;
                              prov:startedAtTime "2016-05-10T13:38:33.5"^^xsd:dateTime ;
                              prov:endedAtTime "2016-05-10T13:38:44.4"^^xsd:dateTime ;
                              ampo:hasNumberOfSteps "2"^^xsd:int ;
                              ampo:hasStep ampo:indexing_33_of_33 ,
                                           ampo:material_deposition_33_of_33 .
 
-ampo:indexing_33_of_33 rdf:type ampo:Step ;
+ampo:indexing_33_of_33 rdfs:label "indexing 33 of 33" ;
+                       rdf:type ampo:Step ;
                        ampo:happensDirectlyBefore ampo:material_deposition_33_of_33 .
 
-ampo:material_deposition_33_of_33 rdf:type ampo:Step .
-
-
-
-
-
+ampo:material_deposition_33_of_33 rdfs:label "material deposition 33 of 33" ;
+                                  rdf:type ampo:Step .
 
