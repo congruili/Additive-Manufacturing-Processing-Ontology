@@ -1,1 +1,1 @@
-Put all files in html folder into `/var/www/html` directory on the server.
+Put all files in html folder into `/var/www/html/` directory on the server.
