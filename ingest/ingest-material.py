@@ -26,8 +26,8 @@ VCARD = Namespace("http://www.w3.org/2006/vcard/ns#")
 VIVO = Namespace('http://vivoweb.org/ontology/core#')
 
 
-get_equipment_query = load_file("queries/listEquip.rq")
-describe_equipment_query = load_file("queries/describeEquip.rq")
+get_material_query = load_file("queries/listMaterial.rq")
+describe_material_query = load_file("queries/describeMaterial.rq")
 
 # standard filters
 non_empty_str = lambda s: True if s else False
@@ -35,7 +35,7 @@ has_label = lambda o: True if o.label() else False
 
 
 def get_metadata(id):
-    return {"index": {"_index": "ampo", "_type": "equipment", "_id": id}}
+    return {"index": {"_index": "ampo", "_type": "material", "_id": id}}
 
 
 def select(endpoint, query):
@@ -62,103 +62,70 @@ def has_type(resource, type):
     return False
 
 
-def get_equipment(endpoint):
-    r = select(endpoint, get_equipment_query)
-    return [rs["equipment"]["value"] for rs in r]
+def get_material(endpoint):
+    r = select(endpoint, get_material_query)
+    return [rs["material"]["value"] for rs in r]
 
 
-def describe_equipment(endpoint, equipment):
-    q = describe_equipment_query.replace("?equipment", "<" + equipment + ">")
+def describe_material(endpoint, material):
+    q = describe_material_query.replace("?material", "<" + material + ">")
     return describe(endpoint, q)
 
 
-def get_most_specific_type(equipment):
-    return Maybe.of(equipment).stream() \
+def get_most_specific_type(material):
+    return Maybe.of(material).stream() \
         .flatmap(lambda p: p.objects(VITRO.mostSpecificType)) \
         .map(lambda t: t.label()) \
         .filter(non_empty_str) \
         .one().value
 
 
-def get_processes(equipment):
-    return Maybe.of(equipment).stream() \
+def get_processes(material):
+    return Maybe.of(material).stream() \
         .flatmap(lambda p: p.objects(AMPO.isParticipantIn)) \
         .filter(has_label) \
         .map(lambda r: {"uri": str(r.identifier), "name": str(r.label())}).list()
 
 
-def get_larger_equip(equipment):
-    return Maybe.of(equipment).stream() \
-        .flatmap(lambda p: p.objects(AMPO.isPartOf)) \
-        .filter(has_label) \
-        .map(lambda r: {"uri": str(r.identifier), "name": str(r.label())}).list()
-
-
-def get_smaller_equip(equipment):
-    return Maybe.of(equipment).stream() \
-        .flatmap(lambda p: p.objects(AMPO.hasPart)) \
-        .filter(has_label) \
-        .map(lambda r: {"uri": str(r.identifier), "name": str(r.label())}).list()
-
-
-def get_inputs(equipment):
-    return Maybe.of(equipment).stream() \
-        .flatmap(lambda p: p.objects(AMPO.hasInput)) \
-        .filter(has_label) \
-        .map(lambda r: {"uri": str(r.identifier), "name": str(r.label())}).list()
-
-
-def get_attrs(equipment):
-    return Maybe.of(equipment).stream() \
+def get_attrs(material):
+    return Maybe.of(material).stream() \
         .flatmap(lambda p: p.objects(AMPO.hasAttribute)) \
         .filter(has_label) \
         .map(lambda r: {"uri": str(r.identifier), "name": str(r.label())}).list()
 
 
-def create_equipment_doc(equipment, endpoint):
-    graph = describe_equipment(endpoint=endpoint, equipment=equipment)
+def create_material_doc(material, endpoint):
+    graph = describe_material(endpoint=endpoint, material=material)
 
-    equ = graph.resource(equipment)
+    mat = graph.resource(material)
 
     try:
-        name = equ.label()
+        name = mat.label()
     except AttributeError:
-        print("missing name:", equipment)
+        print("missing name:", material)
         return {}
 
-    doc = {"uri": equipment, "name": name}
+    doc = {"uri": material, "name": name}
 
-    most_specific_type = get_most_specific_type(equ)
+    most_specific_type = get_most_specific_type(mat)
     if most_specific_type:
         doc.update({"mostSpecificType": most_specific_type})
 
-    processes = get_processes(equ)
+    processes = get_processes(mat)
     if processes:
         doc.update({"process": processes})
 
-    larger_equip = get_larger_equip(equ)
-    if larger_equip:
-        doc.update({"largerEquip": larger_equip})
-
-    smaller_equip = get_smaller_equip(equ)
-    if smaller_equip:
-        doc.update({"smallerEquip": smaller_equip})
-
-    inputs = get_inputs(equ)
-    if inputs:
-        doc.update({"input": inputs})
-
-    attrs = get_attrs(equ)
+    attrs = get_attrs(mat)
     if attrs:
         doc.update({"attr": attrs})
 
     return doc
 
 
-def process_equipment(equipment, endpoint):
-    equ = create_equipment_doc(equipment=equipment, endpoint=endpoint)
-    es_id = equ["uri"]
-    return [json.dumps(get_metadata(es_id)), json.dumps(equ)]
+def process_material(material, endpoint):
+    mat = create_material_doc(material=material, endpoint=endpoint)
+    es_id = mat["uri"]
+    return [json.dumps(get_metadata(es_id)), json.dumps(mat)]
 
 
 def publish(bulk, endpoint, rebuild, mapping):
@@ -176,7 +143,7 @@ def publish(bulk, endpoint, rebuild, mapping):
 
     # push current publication document mapping
 
-    mapping_url = endpoint + "/ampo/equipment/_mapping"
+    mapping_url = endpoint + "/ampo/material/_mapping"
     with open(mapping) as mapping_file:
         r = requests.put(mapping_url, data=mapping_file)
         if r.status_code != requests.codes.ok:
@@ -200,8 +167,8 @@ def publish(bulk, endpoint, rebuild, mapping):
 
 def generate(threads, sparql):
     pool = multiprocessing.Pool(threads)
-    params = [(equipment, sparql) for equipment in get_equipment(endpoint=sparql)]
-    return list(chain.from_iterable(pool.starmap(process_equipment, params)))
+    params = [(material, sparql) for material in get_material(endpoint=sparql)]
+    return list(chain.from_iterable(pool.starmap(process_material, params)))
 
 
 if __name__ == "__main__":
@@ -211,7 +178,7 @@ if __name__ == "__main__":
     parser.add_argument('--es', default="http://localhost:9200", help="elasticsearch service URL")
     parser.add_argument('--publish', default=False, action="store_true", help="publish to elasticsearch?")
     parser.add_argument('--rebuild', default=False, action="store_true", help="rebuild elasticsearch index?")
-    parser.add_argument('--mapping', default="mappings/equipment.json", help="publication elasticsearch mapping document")
+    parser.add_argument('--mapping', default="mappings/material.json", help="publication elasticsearch mapping document")
     parser.add_argument('--sparql', default='https://dofamp.tw.rpi.edu/fuseki/ampo/query', help='sparql endpoint')
     parser.add_argument('out', metavar='OUT', help='elasticsearch bulk ingest file')
 
