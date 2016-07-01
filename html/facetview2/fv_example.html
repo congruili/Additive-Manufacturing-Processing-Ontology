@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>FacetView</title>
+
+  <script type="text/javascript" src="vendor/jquery/1.7.1/jquery-1.7.1.min.js"></script>
+
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>  
+
+  <link rel="stylesheet" href="vendor/jquery-ui-1.8.18.custom/jquery-ui-1.8.18.custom.css">
+  <script type="text/javascript" src="vendor/jquery-ui-1.8.18.custom/jquery-ui-1.8.18.custom.min.js"></script>
+
+  <!-- note that we require the es.js integration, the bootstrap2 facetview and the facetview core -->
+  <script type="text/javascript" src="es.js"></script>
+  <script type="text/javascript" src="bootstrap2.facetview.theme.js"></script>
+  <script type="text/javascript" src="jquery.facetview2.js"></script>
+
+  <link rel="stylesheet" href="css/facetview.css">
+
+  <script type="text/javascript">
+jQuery(document).ready(function($) {
+    $('.facet-view-simple').each(function() {
+        $(this).facetview({
+            search_url : "http://localhost:9200/uniboard/advert/_search",
+            datatype : "jsonp",
+            default_freetext_fuzzify: "*",
+            page_size: 15,
+            sort: [{"title.exact" : {"order" : "asc"}}],
+            searchfield: "title",
+            q : "Money",
+            facets: [
+                {'field': 'price', 'display': 'Price', "type" : "range", "range" : [{"to" : 10, "display" : "less than £10"}, {"from" : 10, "to" : 20, "display" : "£10 - £20"}, {"from" : 20, "to" : 40, "display" : "£20 - £40"}, {"from" : 40, "display" : "£40+"}], "open" : true},
+                {'field' : 'loc', 'display' : 'Distance from me', 'type' : 'geo_distance', 
+                    'unit' : 'mi', 'open' : true, "lat" : 51.533182, "lon" : -0.475996, 
+                    "distance" : [
+                    {"to" : 0.5, "display" : "within 0.5 miles"}, {"to" : 2, "display" : "within 2 miles"}, {"to" : 5, "display" : "within 5 miles"},
+                    {"to" : 10, "display" : "within 10 miles"}, {"to" : 20, "display" : "within 20 miles"}, {"to" : 50, "display" : "within 50 miles"}
+                    ]
+                },
+                {'field': 'subject.exact', 'display': 'Subject', "logic" : "OR", "open" : true, "value_function" :  function(value) {return value.toUpperCase() } },
+                {'field': 'condition.exact', 'display': 'Condition', "logic" : "AND"},
+                {'field': 'year', 'display': 'Publication Year', "size" : 26},
+                {'field': 'edition.exact', 'display': 'Edition', "order" : "reverse_count", "open" : true},
+                {'field' : 'inactive', 'display' : 'Inactive Visible', 'deactivate_threshold' : 2},
+                {'field' : 'invisible', 'display' : 'Inactive Inisible', 'deactivate_threshold' : 2, 'hide_inactive' : true},
+            ],
+            default_facet_size: 11,
+            default_facet_operator: "AND",
+            default_facet_order: "term",
+            from: 0,
+            search_sortby: [
+                {'display':'Date added','field':'created_date'},
+                {'display':'Title','field':'title.exact'},
+                {'display':'Publication Year','field':'year'},
+                {'display':'Edition','field':'edition.exact'},
+                {'display':'Price','field':'price'}
+            ],
+            searchbox_fieldselect: [
+                {'display':'Title','field':'title'},
+                {'display':'ISBN','field':'isbn'},
+                {'display':'Authors','field':'authors'},
+                {'display':'Publisher','field':'publisher'}
+            ],
+            sharesave_link: true,
+            search_button: true,
+            debug: true,
+            fields: ["id", "title", "authors"],
+            render_results_metadata: pageSlider,
+            "result_display" : [ 
+                [ {"pre" : "<strong>", "field": "title", "post" : "</strong>"} ],
+                [ {"pre" : "<em>", "field": "authors", "post" : "</em>"} ],
+            ],
+            selected_filters_in_facet: true,
+            show_filter_field : true,
+            show_filter_logic: true,
+            //predefined_filters : {
+            //    "subject.exact" : ["Medicine"]
+            //},
+            exclude_predefined_filters_from_facets : false
+        });
+    });
+});
+  </script>
+
+<style type="text/css">
+.facet-view-simple{
+    width:1170px;
+    height:600px;
+    margin:20px auto 0 auto;
+}
+</style>
+
+</head>
+<body>
+
+    <div class="facet-view-simple"></div>
+
+</body>
+</html>

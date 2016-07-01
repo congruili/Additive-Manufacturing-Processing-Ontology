@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Equipment Browser</title>
+
+    <script type="text/javascript" src="facetview2/vendor/jquery/1.7.1/jquery-1.7.1.min.js"></script>
+
+    <link rel="stylesheet" href="facetview2/vendor/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="facetview2/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="facetview2/vendor/jquery-ui-1.8.18.custom/jquery-ui-1.8.18.custom.css">
+    <script type="text/javascript" src="facetview2/vendor/jquery-ui-1.8.18.custom/jquery-ui-1.8.18.custom.min.js"></script>
+
+    <!-- note that we require the es.js integration, the bootstrap2 facetview and the facetview core -->
+    <script type="text/javascript" src="facetview2/es.js"></script>
+    <script type="text/javascript" src="facetview2/bootstrap2.facetview.theme.js"></script>
+    <script type="text/javascript" src="facetview2/jquery.facetview2.js"></script>
+
+    <link rel="stylesheet" href="facetview2/css/facetview.css">
+
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('.facet-view-simple').facetview({
+                search_url: '//dofamp.tw.rpi.edu/es/ampo/equipment/_search',
+                page_size: 20,
+                sort: [{"_score" : {"order" : "desc"}}],
+                sharesave_link: true,
+                search_button: true,
+                default_freetext_fuzzify: "*",
+                default_facet_operator: "AND",
+                default_facet_order: "count",
+                default_facet_size: 15,
+                facets: [
+                    {'field': 'mostSpecificType', 'display': 'Type'},
+                    {'field': 'process.name.exact', 'display': 'Process'}
+                ],
+                search_sortby: [
+                    {'display':'Title','field':'title.exact'}
+                ],
+                render_result_record: function(options, record)
+                {
+
+                    var html = "<tr><td>";
+
+                    if (record["uri"]) {
+                        html += "<strong><a href=\""+record["uri"]+"\" target=\"_blank\">" + record["name"] + "</a></strong>";
+                    } else {
+                        html += "<strong>" + record["name"] + "</strong>";
+                    }
+
+                    if (record["mostSpecificType"]) {
+                        html += "<br />Type: " + record["mostSpecificType"];
+                    }
+
+                    if (record["process"]) {
+                        html += "<br /><span>Participate in: ";
+
+                        for(var i = 0; i < record["process"].length; i++) {
+                            html += "<a href=\"" + record["process"][i]["uri"] + "\" target=\"_blank\">" + record["process"][i]["name"] + "</a>";
+                            if (i < record["process"].length - 1) {
+                                html += "; ";
+                            }
+                        }
+
+                        html += "</span>"
+                    }
+
+                    if (record["largerEquip"]) {
+                        html += "<br /><span>Is part of: ";
+
+                        for(var i = 0; i < record["largerEquip"].length; i++) {
+                            html += "<a href=\"" + record["largerEquip"][i]["uri"] + "\" target=\"_blank\">" + record["largerEquip"][i]["name"] + "</a>";
+                            if (i < record["largerEquip"].length - 1) {
+                                html += "; ";
+                            }
+                        }
+
+                        html += "</span>"
+                    }
+
+                    if (record["smallerEquip"]) {
+                        html += "<br /><span>Has part: ";
+
+                        for(var i = 0; i < record["smallerEquip"].length; i++) {
+                            html += "<a href=\"" + record["smallerEquip"][i]["uri"] + "\" target=\"_blank\">" + record["smallerEquip"][i]["name"] + "</a>";
+                            if (i < record["smallerEquip"].length - 1) {
+                                html += "; ";
+                            }
+                        }
+
+                        html += "</span>"
+                    }
+
+                    if (record["input"]) {
+                        html += "<br /><span>Has input: ";
+
+                        for(var i = 0; i < record["input"].length; i++) {
+                            html += "<a href=\"" + record["input"][i]["uri"] + "\" target=\"_blank\">" + record["input"][i]["name"] + "</a>";
+                            if (i < record["input"].length - 1) {
+                                html += "; ";
+                            }
+                        }
+
+                        html += "</span>"
+                    }
+
+                    if (record["attr"]) {
+                        html += "<br /><span>Has attribute: ";
+
+                        for(var i = 0; i < record["attr"].length; i++) {
+                            html += "<a href=\"" + record["attr"][i]["uri"] + "\" target=\"_blank\">" + record["attr"][i]["name"] + "</a>";
+                            if (i < record["attr"].length - 1) {
+                                html += "; ";
+                            }
+                        }
+
+                        html += "</span>"
+                    }
+
+                    html += "</td></tr>";
+                    return html;
+                },
+                selected_filters_in_facet: true,
+                show_filter_field : true,
+                show_filter_logic: true,
+                post_init_callback: function(options, context) {
+                    // None for now
+                },
+                post_render_callback: function(options, context) {
+                    // None for now
+                }
+            });
+        });
+
+    </script>
+
+    <style type="text/css">
+
+        .facet-view-simple{
+            width:100%;
+            height:100%;
+            margin:20px auto 0 auto;
+        }
+
+        .facetview_freetext.span4 {
+            width: 290px;
+            height: 12px;
+        }
+
+        legend {
+            display: none;
+        }
+
+        #wrapper-content {
+            padding-top: 0px;
+        }
+
+        input {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .alert {
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="facet-view-simple"></div>
+</body>
+</html>
