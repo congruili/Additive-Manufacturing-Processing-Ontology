@@ -1,4 +1,7 @@
 # AMPO
+AMPO Faceted Search using ElasticSearch
+
+## Installation
 
 To log in the server:
 `$ ssh -l <username> -p 2229 dofamp.tw.rpi.edu`
