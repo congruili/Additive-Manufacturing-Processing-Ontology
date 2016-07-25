@@ -56,14 +56,15 @@
                     if (record["process"]) {
                         html += "<br /><span>Participate in: ";
 
-                        for(var i = 0; i < record["process"].length; i++) {
-                            html += "<a href=\"" + record["process"][i]["uri"] + "\" target=\"_blank\">" + record["process"][i]["name"] + "</a>";
-                            if (i < record["process"].length - 1) {
-                                html += "; ";
-                            }
-                        }
+                        // for(var i = 0; i < record["process"].length; i++) {
+                        //     html += "<a href=\"" + record["process"][i]["uri"] + "\" target=\"_blank\">" + record["process"][i]["name"] + "</a>";
+                        //     if (i < record["process"].length - 1) {
+                        //         html += "; ";
+                        //     }
+                        // }
 
-                        html += "</span>"
+                        html += "<a href=\"" + record["process"]["uri"] + "\" target=\"_blank\">" + record["process"]["name"] + "</a>";
+                        html += "</span>";
                     }
 
                     if (record["largerEquip"]) {

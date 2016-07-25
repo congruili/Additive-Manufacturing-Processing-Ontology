@@ -113,7 +113,8 @@ def create_material_doc(material, endpoint):
 
     processes = get_processes(mat)
     if processes:
-        doc.update({"process": processes})
+        new_processes = sorted(processes, key=lambda k: k['name']) 
+        doc.update({"process": new_processes[0]})
 
     attrs = get_attrs(mat)
     if attrs:

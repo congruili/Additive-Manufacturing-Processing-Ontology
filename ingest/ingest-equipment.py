@@ -9,6 +9,7 @@ from itertools import chain
 import functools
 import argparse
 from Maybe import *
+import collections
 
 
 def load_file(filepath):
@@ -132,9 +133,10 @@ def create_equipment_doc(equipment, endpoint):
     if most_specific_type:
         doc.update({"mostSpecificType": most_specific_type})
 
-    processes = get_processes(equ)
+    processes = get_processes(equ)    
     if processes:
-        doc.update({"process": processes})
+        new_processes = sorted(processes, key=lambda k: k['name']) 
+        doc.update({"process": new_processes[0]})
 
     larger_equip = get_larger_equip(equ)
     if larger_equip:
