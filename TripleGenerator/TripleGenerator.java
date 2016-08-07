@@ -1,6 +1,6 @@
-import java.io.File;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
-import org.apache.commons.io.FileUtils;
 
 public class TripleGenerator {	
 
@@ -44,7 +44,8 @@ public class TripleGenerator {
 		String date = "2016-05-10T";
 		
 		Triple triple = new Triple(times, date);
-		File file = new File("process_triples.ttl");
-		FileUtils.writeStringToFile(file, triple.getTriples());
+		BufferedWriter writer = new BufferedWriter(new FileWriter("process_triples.ttl"));
+		writer.write(triple.getTriples());
+		writer.close();
 	}
 }
