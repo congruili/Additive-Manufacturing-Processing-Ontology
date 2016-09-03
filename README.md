@@ -1,5 +1,5 @@
-# AMPO
-AMPO Faceted Search using ElasticSearch
+# Additive-Manufacturing-Processing-Ontology
+AMPO(Additive Manufacturing Processing Ontology) Faceted Search using ElasticSearch
 
 ## Installation
 
