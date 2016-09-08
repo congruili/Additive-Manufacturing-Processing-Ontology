@@ -1,6 +1,12 @@
 # Additive Manufacturing Processing Ontology
 AMPO(Additive Manufacturing Processing Ontology) Faceted Search using ElasticSearch
 
+Please check out the live demo of the faceted browsers here:
+
+https://dofamp.tw.rpi.edu/equipment.html
+
+https://dofamp.tw.rpi.edu/material.html
+
 ## Installation
 
 To log in the server:
