@@ -372,9 +372,9 @@ ampo:build_glass_transition_temperature rdfs:label "build glass transition tempe
 ampo:build_reactivity rdfs:label "build reactivity" ;
                       rdf:type ampo:AbstractAttribute ,
                                ampo:Chemical ,
-				                       ampo:Capacity ;
+				               ampo:Capacity ;
                       ampo:descriptiveValue "stable"^^xsd:string ;
-					            ampo:isAttributeOf ampo:build_polymer .
+					  ampo:isAttributeOf ampo:build_polymer .
 
 
 ampo:build_viscosity rdfs:label "build viscosity" ;
@@ -446,9 +446,9 @@ ampo:support_glass_transition_temperature rdfs:label "support glass transition t
 ampo:support_reactivity rdfs:label "support reactivity" ;
                         rdf:type ampo:StaticQuantitativeAttribute ,
                                  ampo:Chemical ,
-				                         ampo:Capacity ;
+				                 ampo:Capacity ;
                         ampo:descriptiveValue "stable"^^xsd:string ;
-					              ampo:isAttributeOf ampo:support_polymer .
+					    ampo:isAttributeOf ampo:support_polymer .
 
 
 ampo:support_viscosity rdfs:label "support viscosity" ;
@@ -478,77 +478,77 @@ ampo:support_flexural_strength rdfs:label "support flexural strength" ;
 ampo:max_scanning_motor_speed rdfs:label "max scanning motor speed" ;
                               rdf:type ampo:StaticQuantitativeAttribute ,
                                        ampo:Capacity ;
-							                ampo:isAttributeOf ampo:scanning_motors .
+							  ampo:isAttributeOf ampo:scanning_motors .
 							  
 							
 ampo:max_scanning_motor_step_size rdfs:label "max scanning motor step size" ;
                                   rdf:type ampo:StaticQuantitativeAttribute ,
                                            ampo:Capacity ;
-								                  ampo:isAttributeOf ampo:scanning_motors .
+								  ampo:isAttributeOf ampo:scanning_motors .
 
 
 ampo:max_index_stage_speed rdfs:label "max index stage speed" ;
                            rdf:type ampo:StaticQuantitativeAttribute ,
                                     ampo:Capacity ; 
-						               qudt:quantityValue [ qudt:numericValue "300"^^xsd:double ;
+			               qudt:quantityValue [ qudt:numericValue "300"^^xsd:double ;
                                                 qudt:unit qudt:mm_per_s                           
                                               ] ;
-						               ampo:isAttributeOf ampo:index_stage .
+			               ampo:isAttributeOf ampo:index_stage .
 					
 				
 ampo:max_index_stage_step_size rdfs:label "max index stage step size" ;
                                rdf:type ampo:StaticQuantitativeAttribute ,
-						                            ampo:Capacity ;
-						                   qudt:quantityValue [ qudt:numericValue "0.003125"^^xsd:double ;
+			                            ampo:Capacity ;
+			                   qudt:quantityValue [ qudt:numericValue "0.003125"^^xsd:double ;
                                                     qudt:unit qudt:step                           
                                                   ] ;
-						                   ampo:isAttributeOf ampo:index_stage .   
+			                   ampo:isAttributeOf ampo:index_stage .   
 
 
 ampo:state rdfs:label "state" ;
            rdf:type ampo:AbstractAttribute ,
                     ampo:Chemical ;
-		       ampo:descriptiveValue "solid"^^xsd:string ;
-		       ampo:isAttributeOf ampo:cube .
+		   ampo:descriptiveValue "solid"^^xsd:string ;
+		   ampo:isAttributeOf ampo:cube .
 		   
 
 ampo:chemical_porosity rdfs:label "chemical porosity" ;
                        rdf:type ampo:StaticQuantitativeAttribute ,
                                 ampo:Chemical ;
-			                 ampo:isAttributeOf ampo:cube .
+			           ampo:isAttributeOf ampo:cube .
 			  
 			  
 ampo:cube_strength rdfs:label "cube strength" ;
                    rdf:type ampo:StaticQuantitativeAttribute ,
                             ampo:Mechanical ;
-			             ampo:isAttributeOf ampo:cube .	
+			       ampo:isAttributeOf ampo:cube .	
 			  
 			  
 ampo:mechanical_porosity rdfs:label "mechanical porosity" ;
                          rdf:type ampo:StaticQuantitativeAttribute ,
                                   ampo:Mechanical ;
-			                   ampo:isAttributeOf ampo:cube .	
+			             ampo:isAttributeOf ampo:cube .	
 			  
 			  
 ampo:dimensional_accuracy rdfs:label "dimensional accuracy" ;
                           rdf:type ampo:StaticQuantitativeAttribute ,
                                    ampo:Geometric ;
-			                    ampo:isAttributeOf ampo:cube .
+			              ampo:isAttributeOf ampo:cube .
 			  
 			  
 ampo:surface_finish rdfs:label "surface finish" ;
                     rdf:type ampo:StaticQuantitativeAttribute ,
                              ampo:Geometric ;
-			              ampo:isAttributeOf ampo:cube .				
+			        ampo:isAttributeOf ampo:cube .				
 
 
 ampo:max_workpiece_dimension_length rdfs:label "max workpiece dimension length" ;
                                     rdf:type ampo:StaticQuantitativeAttribute ,
                                              ampo:Geometric ;
-							                      qudt:quantityValue [ qudt:numericValue "200"^^xsd:double ;
-                                                         qudt:unit qudt:mm                           
-                                                       ] ;
-							                      ampo:isAttributeOf ampo:BukobotV2 .
+					                qudt:quantityValue [ qudt:numericValue "200"^^xsd:double ;
+					                                     qudt:unit qudt:mm                           
+					                                   ] ;
+							        ampo:isAttributeOf ampo:BukobotV2 .
 
 
 ampo:max_workpiece_dimension_width rdfs:label "max workpiece dimension width" ;
@@ -573,10 +573,10 @@ ampo:max_platform_temperature rdfs:label "max platform temperature" ;
                               rdf:type ampo:StaticQuantitativeAttribute ,
                                        ampo:Thermal ,
                                        ampo:Capacity ;
-							                qudt:quantityValue [ qudt:numericValue "120"^^xsd:double ;
+							  qudt:quantityValue [ qudt:numericValue "120"^^xsd:double ;
                                                    qudt:unit qudt:degree_Celsius 
                                                  ] ;
-							                ampo:isAttributeOf ampo:BukobotV2 .
+							  ampo:isAttributeOf ampo:BukobotV2 .
 							  
 							  
 ampo:platform_temperature rdfs:label "platform temperature" ;
@@ -584,7 +584,7 @@ ampo:platform_temperature rdfs:label "platform temperature" ;
                           qudt:quantityValue [ qudt:numericValue "60"^^xsd:double ;
                                                qudt:unit qudt:degree_Celsius 
                                              ] ;
-						              ampo:isInputOf ampo:BukobotV2 .
+						  ampo:isInputOf ampo:BukobotV2 .
 						  
 						
 ampo:extruder_temperature rdfs:label "extruder temperature" ;
@@ -592,16 +592,16 @@ ampo:extruder_temperature rdfs:label "extruder temperature" ;
                           qudt:quantityValue [ qudt:numericValue "200"^^xsd:double ;
                                                qudt:unit qudt:degree_Celsius 
                                              ] ;
-						              ampo:isInputOf ampo:BukobotV2 .
+						  ampo:isInputOf ampo:BukobotV2 .
 
 
 ampo:slice rdfs:label "slice" ;
            rdf:type ampo:StaticQuantitativeAttribute ,
                     ampo:Geometric ;
-		       qudt:quantityValue [ qudt:numericValue "33"^^xsd:double ;
+		   qudt:quantityValue [ qudt:numericValue "33"^^xsd:double ;
                                 qudt:unit qudt:layer
                               ] ;
-		       ampo:isAttributeOf ampo:CAD_model .
+		   ampo:isAttributeOf ampo:CAD_model .
 
 
 ampo:heating_power rdfs:label "heating power" ;
