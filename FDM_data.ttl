@@ -508,8 +508,8 @@ ampo:max_index_stage_step_size rdfs:label "max index stage step size" ;
 ampo:state rdfs:label "state" ;
            rdf:type ampo:AbstractAttribute ,
                     ampo:Chemical ;
-		    ampo:descriptiveValue "solid"^^xsd:string ;
-		    ampo:isAttributeOf ampo:cube .
+           ampo:descriptiveValue "solid"^^xsd:string ;
+           ampo:isAttributeOf ampo:cube .
 		   
 
 ampo:chemical_porosity rdfs:label "chemical porosity" ;
