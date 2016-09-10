@@ -204,13 +204,13 @@ ampo:isAttributeOf rdf:type owl:ObjectProperty ;
 
 ###  https://tw.rpi.edu/web/project/ampo#hasAttribute
 
-ampo:hasAttributeOf rdf:type owl:ObjectProperty ;
+ampo:hasAttribute rdf:type owl:ObjectProperty ;
                    
-                    rdfs:range ampo:Attribute ;
-                   
-                    rdfs:comment "An entity may have one or more attributes." ;
-                   
-                    rdfs:label "has attribute" .
+                  rdfs:range ampo:Attribute ;
+               
+                  rdfs:comment "An entity may have one or more attributes." ;
+               
+                  rdfs:label "has attribute" .
 
 
 
@@ -295,6 +295,7 @@ ampo:isParticipantIn rdf:type owl:ObjectProperty ;
                      rdfs:domain [ rdf:type owl:Class ;
                                    owl:unionOf ( ampo:Equipment
                                                  ampo:Material
+                                                 ampo:Product
                                                )
                                  ] ;
                      
