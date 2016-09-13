@@ -636,10 +636,7 @@ ampo:charles_parslow rdfs:label "charles parslow" ;
 ampo:fused_deposition_modeling rdfs:label "fused deposition modeling" ;
                                prov:qualifiedAssociation [ prov:agent ampo:charles_parslow ;
                                                            prov:hadRole prov:operator
-                                                         ] .
-
-
-ampo:fused_deposition_modeling rdfs:label "fused deposition modeling" ;
+                                                         ] ;
                                ampo:hasSubProcess ampo:printing_layer_1_of_33 ,
                                                   ampo:printing_layer_2_of_33 ,
                                                   ampo:printing_layer_3_of_33 ,
