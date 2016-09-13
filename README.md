@@ -1,6 +1,8 @@
 # Additive Manufacturing Processing Ontology
 AMPO(Additive Manufacturing Processing Ontology) Faceted Search using ElasticSearch
 
+Please check out the ontology Cmap [here]( https://cmapscloud.ihmc.us:443/rid=1Q2LYB6N7-HKDXKF-82/AMOnto_v1.7.cmap).
+
 Please check out the live demo of the faceted browsers here:
 
 https://dofamp.tw.rpi.edu/equipment.html
