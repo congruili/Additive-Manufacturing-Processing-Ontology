@@ -1,17 +1,17 @@
 {
-	"equipment": {
-	    "properties": {
-	        "mostSpecificType": {
+    "equipment": {
+        "properties": {
+            "mostSpecificType": {
                 "type": "multi_field",
                 "fields": {
                     "mostSpecificType": {
                         "type": "string",
                         "index": "analyzed"
                     },
-	                "exact": {
-	                    "type": "string",
-	                    "index": "not_analyzed"
-	                }
+                    "exact": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    }
                 }
             },
             "process": {
@@ -119,10 +119,10 @@
                     }
                 }
             },
-	        "uri": {
-     	        "type": "string",
+            "uri": {
+                "type": "string",
                 "index": "not_analyzed"
             }
-	    }
-	}
+        }
+    }
 }
