@@ -244,6 +244,38 @@ ampo:hasInput rdf:type owl:ObjectProperty ;
 
 
 
+###  https://tw.rpi.edu/web/project/ampo#generates
+
+ampo:generates rdf:type owl:ObjectProperty ;
+               
+               rdfs:domain ampo:Model ;
+               
+               rdfs:range ampo:Model ;
+
+               owl:inverseOf ampo:isGeneratedFrom ;
+               
+               rdfs:comment "Model produces the following entity." ;
+               
+               rdfs:label "generates" .
+
+
+
+###  https://tw.rpi.edu/web/project/ampo#isGeneratedFrom
+
+ampo:isGeneratedFrom rdf:type owl:ObjectProperty ;
+               
+                     rdfs:domain ampo:Model ;
+                     
+                     rdfs:range ampo:Model ;
+
+                     owl:inverseOf ampo:generates ;
+                     
+                     rdfs:comment "Entity is created from a different model." ;
+                     
+                     rdfs:label "is generated from" .
+
+
+
 ###  https://tw.rpi.edu/web/project/ampo#isMeasuredBy
 
 ampo:isMeasuredBy rdf:type owl:ObjectProperty ;
@@ -281,10 +313,28 @@ ampo:isPartOf rdf:type owl:ObjectProperty ;
               rdfs:domain ampo:Equipment ;
               
               rdfs:range ampo:Equipment ;
+
+              owl:inverseOf ampo:hasPart ;
               
               rdfs:comment "The constituent pieces of equipment comprises a larger piece of equipment." ;
               
               rdfs:label "is part of" .
+
+
+
+###  https://tw.rpi.edu/web/project/ampo#hasPart
+
+ampo:hasPart rdf:type owl:ObjectProperty ;
+              
+             rdfs:domain ampo:Equipment ;
+
+             rdfs:range ampo:Equipment ;
+
+             owl:inverseOf ampo:isPartOf ;
+
+             rdfs:comment "" ;
+
+             rdfs:label "has part" .
 
 
 
@@ -590,11 +640,11 @@ ampo:Chemical rdf:type owl:Class ;
 
 ampo:Geometric rdf:type owl:Class ;
               
-              rdfs:subClassOf ampo:Attribute ;
+               rdfs:subClassOf ampo:Attribute ;
               
-              rdfs:comment "Attribute which describes the shape." ;
+               rdfs:comment "Attribute which describes the shape." ;
               
-              rdfs:label "Geometric" .
+               rdfs:label "Geometric" .
 
 
 
@@ -602,11 +652,11 @@ ampo:Geometric rdf:type owl:Class ;
 
 ampo:DynamicQuantitativeAttribute rdf:type owl:Class ;
                                 
-                                rdfs:subClassOf ampo:QuantitativeAttribute ;
-                                
-                                rdfs:comment "An attribute that is a function of time." ;
-                                
-                                rdfs:label "Dynamic Quantitative Attribute" .
+                                  rdfs:subClassOf ampo:QuantitativeAttribute ;
+                                  
+                                  rdfs:comment "An attribute that is a function of time." ;
+                                  
+                                  rdfs:label "Dynamic Quantitative Attribute" .
 
 
 
